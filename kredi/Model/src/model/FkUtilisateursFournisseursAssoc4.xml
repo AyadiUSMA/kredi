@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkUtilisateursFournisseursAssoc4"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TypesDemande"
+    Cardinality="1"
+    Source="true"
+    Owner="model.TypesDemande">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TypesDemande"/>
+      <Attr Name="_foreignKey" Value="model.TypesDemande.Primary1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.TypesDemande.IdtypesDemande"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Utilisateurs"
+    Cardinality="-1"
+    Owner="model.Utilisateurs">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Utilisateurs"/>
+      <Attr Name="_foreignKey" Value="model.Utilisateurs.FkUtilisateursFournisseurs"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Utilisateurs.FournisseursIdfournisseurs"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

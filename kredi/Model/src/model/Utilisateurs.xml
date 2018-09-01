@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Utilisateurs"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="Utilisateurs"
+  AliasName="Utilisateurs"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Idutilisateurs"
+    IsNotNull="true"
+    ColumnName="idUtilisateurs"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="Utilisateurs"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Nom"
+    Precision="45"
+    ColumnName="Nom"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="Utilisateurs">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Prenom"
+    Precision="45"
+    ColumnName="Prenom"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="Utilisateurs">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Password"
+    Precision="45"
+    ColumnName="password"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="Utilisateurs">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FournisseursIdfournisseurs"
+    IsNotNull="true"
+    ColumnName="Fournisseurs_idFournisseurs"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="Utilisateurs"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TypeFournisseurIdtypeFournisseur"
+    IsNotNull="true"
+    ColumnName="Type_fournisseur_idType_fournisseur"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="Utilisateurs"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Demandes"
+    Association="model.FkUtilisateursFournisseursAssoc"
+    AssociationEnd="model.FkUtilisateursFournisseursAssoc.Demandes"
+    AssociationOtherEnd="model.FkUtilisateursFournisseursAssoc.Utilisateurs"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TypeFournisseur"
+    Association="model.FkUtilisateursFournisseursAssoc1"
+    AssociationEnd="model.FkUtilisateursFournisseursAssoc1.TypeFournisseur"
+    AssociationOtherEnd="model.FkUtilisateursFournisseursAssoc1.Utilisateurs"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Fournisseurs"
+    Association="model.FkUtilisateursFournisseursAssoc2"
+    AssociationEnd="model.FkUtilisateursFournisseursAssoc2.Fournisseurs"
+    AssociationOtherEnd="model.FkUtilisateursFournisseursAssoc2.Utilisateurs"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Demandes2"
+    Association="model.FkUtilisateursFournisseursAssoc3"
+    AssociationEnd="model.FkUtilisateursFournisseursAssoc3.Demandes2"
+    AssociationOtherEnd="model.FkUtilisateursFournisseursAssoc3.Utilisateurs"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TypesDemande"
+    Association="model.FkUtilisateursFournisseursAssoc4"
+    AssociationEnd="model.FkUtilisateursFournisseursAssoc4.TypesDemande"
+    AssociationOtherEnd="model.FkUtilisateursFournisseursAssoc4.Utilisateurs"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Demandes1"
+    Association="model.FkUtilisateursTypeFournisseur1Assoc"
+    AssociationEnd="model.FkUtilisateursTypeFournisseur1Assoc.Demandes1"
+    AssociationOtherEnd="model.FkUtilisateursTypeFournisseur1Assoc.Utilisateurs1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TypeFournisseur1"
+    Association="model.FkUtilisateursTypeFournisseur1Assoc1"
+    AssociationEnd="model.FkUtilisateursTypeFournisseur1Assoc1.TypeFournisseur1"
+    AssociationOtherEnd="model.FkUtilisateursTypeFournisseur1Assoc1.Utilisateurs1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Fournisseurs1"
+    Association="model.FkUtilisateursTypeFournisseur1Assoc2"
+    AssociationEnd="model.FkUtilisateursTypeFournisseur1Assoc2.Fournisseurs1"
+    AssociationOtherEnd="model.FkUtilisateursTypeFournisseur1Assoc2.Utilisateurs1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Demandes21"
+    Association="model.FkUtilisateursTypeFournisseur1Assoc3"
+    AssociationEnd="model.FkUtilisateursTypeFournisseur1Assoc3.Demandes21"
+    AssociationOtherEnd="model.FkUtilisateursTypeFournisseur1Assoc3.Utilisateurs1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TypesDemande1"
+    Association="model.FkUtilisateursTypeFournisseur1Assoc4"
+    AssociationEnd="model.FkUtilisateursTypeFournisseur1Assoc4.TypesDemande1"
+    AssociationOtherEnd="model.FkUtilisateursTypeFournisseur1Assoc4.Utilisateurs1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Voitures"
+    Association="model.FkUtilisateursTypeFournisseur1Assoc5"
+    AssociationEnd="model.FkUtilisateursTypeFournisseur1Assoc5.Voitures"
+    AssociationOtherEnd="model.FkUtilisateursTypeFournisseur1Assoc5.Utilisateurs"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Voitures1"
+    Association="model.FkUtilisateursFournisseursAssoc5"
+    AssociationEnd="model.FkUtilisateursFournisseursAssoc5.Voitures1"
+    AssociationOtherEnd="model.FkUtilisateursFournisseursAssoc5.Utilisateurs1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Utilisateurs.Idutilisateurs"/>
+      <Item Value="model.Utilisateurs.FournisseursIdfournisseurs"/>
+      <Item Value="model.Utilisateurs.TypeFournisseurIdtypeFournisseur"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkUtilisateursFournisseurs">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Utilisateurs_Fournisseurs"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Utilisateurs.FournisseursIdfournisseurs"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkUtilisateursTypeFournisseur1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="fk_Utilisateurs_Type_fournisseur1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Utilisateurs.TypeFournisseurIdtypeFournisseur"/>
+    </AttrArray>
+  </Key>
+</Entity>

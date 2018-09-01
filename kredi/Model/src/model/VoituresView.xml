@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VoituresView"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="Voitures"
+    Entity="model.Voitures"/>
+  <ViewAttribute
+    Name="Idvoitures"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idvoitures"
+    EntityUsage="Voitures"
+    AliasName="idVoitures"/>
+  <ViewAttribute
+    Name="Marquevoiture"
+    PrecisionRule="true"
+    EntityAttrName="Marquevoiture"
+    EntityUsage="Voitures"
+    AliasName="MarqueVoiture"/>
+  <ViewAttribute
+    Name="Modelvoiture"
+    PrecisionRule="true"
+    EntityAttrName="Modelvoiture"
+    EntityUsage="Voitures"
+    AliasName="ModelVoiture"/>
+  <ViewLinkAccessor
+    Name="DemandesView"
+    ViewLink="model.FkDemandesUtilisateurs1Assoc4Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="DemandesView1"
+    ViewLink="model.FkDemandesTypesDemande1Assoc4Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="UtilisateursView"
+    ViewLink="model.FkUtilisateursTypeFournisseur1Assoc5Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="UtilisateursView1"
+    ViewLink="model.FkUtilisateursFournisseursAssoc5Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>
