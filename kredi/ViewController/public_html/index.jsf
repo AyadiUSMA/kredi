@@ -8,6 +8,8 @@
                     <af:panelGridLayout id="pgl1">
                         <af:gridRow height="50px" id="gr1">
                             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                                <af:outputFormatted value="Consultation Des Credits  Pour Mon entreprise" id="of1"
+                                                    inlineStyle="font-size:xx-large; width:auto; height:auto; position:center;"/>
                                 <!-- Header -->
                             </af:gridCell>
                         </af:gridRow>
