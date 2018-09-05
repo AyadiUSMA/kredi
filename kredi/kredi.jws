@@ -80,12 +80,27 @@
                   </hash>
                </list>
             </hash>
+            <value n="platformType" v="TOMCAT"/>
+            <value n="platformVersion" v="6.0"/>
             <value n="profileClass" v="oracle.jdeveloper.deploy.ear.EarProfile"/>
             <value n="profileName" v="kredi_Project1_kredi"/>
+            <hash n="properties">
+               <value n="" v=""/>
+            </hash>
          </hash>
       </hash>
       <list n="profileList">
          <string v="kredi_Project1_kredi"/>
       </list>
+   </hash>
+   <hash n="oracle.jdeveloper.model.PathsConfiguration">
+      <hash n="ApplicationSrcContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="src/"/>
+         </list>
+      </hash>
    </hash>
 </jws:workspace>

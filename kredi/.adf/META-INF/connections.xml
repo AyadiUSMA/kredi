@@ -4,7 +4,7 @@
     <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
     <RefAddresses>
       <StringRefAddr addrType="hostname">
-        <Contents>sql7.freemysqlhosting.net</Contents>
+        <Contents>db4free.net</Contents>
       </StringRefAddr>
       <SecureRefAddr addrType="password"/>
       <StringRefAddr addrType="driver">
@@ -17,10 +17,10 @@
         <Contents>3306</Contents>
       </StringRefAddr>
       <StringRefAddr addrType="user">
-        <Contents>sql7253786</Contents>
+        <Contents>kredi2018</Contents>
       </StringRefAddr>
       <StringRefAddr addrType="dataSourceName">
-        <Contents>sql7253786</Contents>
+        <Contents>kredi2018</Contents>
       </StringRefAddr>
     </RefAddresses>
   </Reference>
