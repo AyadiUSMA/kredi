@@ -131,6 +131,62 @@
     EntityAttrName="Typeproject"
     EntityUsage="Demandes2"
     AliasName="Typeproject"/>
+  <ViewCriteria
+    Name="Demandes2ViewCriteria_followDemandesChefServices"
+    ViewObjectName="model.Demandes2View"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="Demandes2ViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Demandes2ViewCriteria_Demandes2ViewCriteria_row_0_Cite"
+        ViewAttribute="Cite"
+        Operator="="
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Gouv"
+        ViewAttribute="Gouv"
+        Operator="="
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Demandes2ViewCriteria_Demandes2ViewCriteria_row_0_Anneeexperience"
+        ViewAttribute="Anneeexperience"
+        Operator="="
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Demandes2ViewCriteria_Demandes2ViewCriteria_row_0_Autofinancement"
+        ViewAttribute="Autofinancement"
+        Operator="="
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="DemandesView"
     ViewLink="model.FkDemandesUtilisateurs1Link"

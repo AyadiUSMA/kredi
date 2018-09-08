@@ -12,7 +12,7 @@
                                 <!-- Header -->
                                 <af:panelGroupLayout id="pgl4" layout="horizontal" halign="center"
                                                      inlineStyle="font-size:xx-large;">
-                                    <af:activeOutputText value="KERDI" id="aot1"/>
+                                    <af:activeOutputText value="KREDI" id="aot1"/>
                                 </af:panelGroupLayout>
                             </af:gridCell>
                         </af:gridRow>
@@ -30,10 +30,10 @@
                                                 <af:panelGroupLayout id="pgl2" layout="scroll">
                                                     <af:panelHeader text="Demandes2" id="ph1">
                                                         <af:query id="qryId1" headerText="Search" disclosed="true"
-                                                                  value="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
-                                                                  model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
-                                                                  queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
-                                                                  queryOperationListener="#{bindings.ImplicitViewCriteriaQuery.processQueryOperation}"
+                                                                  value="#{bindings.Demandes2ViewCriteriafollowDemandesChefServicesQuery.queryDescriptor}"
+                                                                  model="#{bindings.Demandes2ViewCriteriafollowDemandesChefServicesQuery.queryModel}"
+                                                                  queryListener="#{bindings.Demandes2ViewCriteriafollowDemandesChefServicesQuery.processQuery}"
+                                                                  queryOperationListener="#{bindings.Demandes2ViewCriteriafollowDemandesChefServicesQuery.processQueryOperation}"
                                                                   resultComponentId="::resId1" rows="3" maxColumns="5"/>
                                                     </af:panelHeader>
                                                     <af:panelGroupLayout id="pgl3" layout="horizontal">
@@ -58,116 +58,382 @@
                                                               selectionListener="#{bindings.Demandes2View1.collectionModel.makeCurrent}"
                                                               rowSelection="single"
                                                               fetchSize="#{bindings.Demandes2View1.rangeSize}"
-                                                              id="resId1" partialTriggers="::b1 ::b2 ::b3">
+                                                              id="resId1"
+                                                              partialTriggers="::b1 ::b2 ::b3 ::b4 ::b5 ::b6 ::b7">
                                                         <af:column headerText="#{bindings.Demandes2View1.hints.Nom.label}"
                                                                    id="resId1c2">
-                                                            <af:outputText value="#{row.Nom}"
-                                                                           shortDesc="#{bindings.Demandes2View1.hints.Nom.tooltip}"
-                                                                           id="ot2"/>
-                                                        </af:column>
-                                                        <af:column headerText="#{bindings.Demandes2View1.hints.Prenom.label}"
-                                                                   id="resId1c3">
-                                                            <af:outputText value="#{row.Prenom}"
-                                                                           shortDesc="#{bindings.Demandes2View1.hints.Prenom.tooltip}"
-                                                                           id="ot3"/>
+                                                            <af:inputText value="#{row.bindings.Nom.inputValue}"
+                                                                          label="#{bindings.Demandes2View1.hints.Nom.label}"
+                                                                          required="#{bindings.Demandes2View1.hints.Nom.mandatory}"
+                                                                          columns="#{bindings.Demandes2View1.hints.Nom.displayWidth}"
+                                                                          maximumLength="#{bindings.Demandes2View1.hints.Nom.precision}"
+                                                                          shortDesc="#{bindings.Demandes2View1.hints.Nom.tooltip}"
+                                                                          id="it5">
+                                                                <f:validator binding="#{row.bindings.Nom.validator}"/>
+                                                            </af:inputText>
                                                         </af:column>
                                                         <af:column headerText="#{bindings.Demandes2View1.hints.Salairemensuel.label}"
                                                                    id="resId1c7">
-                                                            <af:outputText value="#{row.Salairemensuel}"
-                                                                           shortDesc="#{bindings.Demandes2View1.hints.Salairemensuel.tooltip}"
-                                                                           id="ot7">
+                                                            <af:inputText value="#{row.bindings.Salairemensuel.inputValue}"
+                                                                          label="#{bindings.Demandes2View1.hints.Salairemensuel.label}"
+                                                                          required="#{bindings.Demandes2View1.hints.Salairemensuel.mandatory}"
+                                                                          columns="#{bindings.Demandes2View1.hints.Salairemensuel.displayWidth}"
+                                                                          maximumLength="#{bindings.Demandes2View1.hints.Salairemensuel.precision}"
+                                                                          shortDesc="#{bindings.Demandes2View1.hints.Salairemensuel.tooltip}"
+                                                                          id="it1">
+                                                                <f:validator binding="#{row.bindings.Salairemensuel.validator}"/>
                                                                 <af:convertNumber groupingUsed="false"
                                                                                   pattern="#{bindings.Demandes2View1.hints.Salairemensuel.format}"/>
-                                                            </af:outputText>
+                                                            </af:inputText>
                                                         </af:column>
                                                         <af:column headerText="#{bindings.Demandes2View1.hints.Montantducredit.label}"
                                                                    id="resId1c8">
-                                                            <af:outputText value="#{row.Montantducredit}"
-                                                                           shortDesc="#{bindings.Demandes2View1.hints.Montantducredit.tooltip}"
-                                                                           id="ot8">
+                                                            <af:inputText value="#{row.bindings.Montantducredit.inputValue}"
+                                                                          label="#{bindings.Demandes2View1.hints.Montantducredit.label}"
+                                                                          required="#{bindings.Demandes2View1.hints.Montantducredit.mandatory}"
+                                                                          columns="#{bindings.Demandes2View1.hints.Montantducredit.displayWidth}"
+                                                                          maximumLength="#{bindings.Demandes2View1.hints.Montantducredit.precision}"
+                                                                          shortDesc="#{bindings.Demandes2View1.hints.Montantducredit.tooltip}"
+                                                                          id="it11">
+                                                                <f:validator binding="#{row.bindings.Montantducredit.validator}"/>
                                                                 <af:convertNumber groupingUsed="false"
                                                                                   pattern="#{bindings.Demandes2View1.hints.Montantducredit.format}"/>
-                                                            </af:outputText>
+                                                            </af:inputText>
                                                         </af:column>
                                                         <af:column headerText="#{bindings.Demandes2View1.hints.Typetravail.label}"
                                                                    id="resId1c9">
-                                                            <af:outputText value="#{row.Typetravail}"
-                                                                           shortDesc="#{bindings.Demandes2View1.hints.Typetravail.tooltip}"
-                                                                           id="ot9"/>
-                                                        </af:column>
-                                                        <af:column headerText="#{bindings.Demandes2View1.hints.Anneeexperience.label}"
-                                                                   id="resId1c10">
-                                                            <af:outputText value="#{row.Anneeexperience}"
-                                                                           shortDesc="#{bindings.Demandes2View1.hints.Anneeexperience.tooltip}"
-                                                                           id="ot10">
-                                                                <af:convertNumber groupingUsed="false"
-                                                                                  pattern="#{bindings.Demandes2View1.hints.Anneeexperience.format}"/>
-                                                            </af:outputText>
+                                                            <af:inputText value="#{row.bindings.Typetravail.inputValue}"
+                                                                          label="#{bindings.Demandes2View1.hints.Typetravail.label}"
+                                                                          required="#{bindings.Demandes2View1.hints.Typetravail.mandatory}"
+                                                                          columns="#{bindings.Demandes2View1.hints.Typetravail.displayWidth}"
+                                                                          maximumLength="#{bindings.Demandes2View1.hints.Typetravail.precision}"
+                                                                          shortDesc="#{bindings.Demandes2View1.hints.Typetravail.tooltip}"
+                                                                          id="it9">
+                                                                <f:validator binding="#{row.bindings.Typetravail.validator}"/>
+                                                            </af:inputText>
                                                         </af:column>
                                                         <af:column headerText="#{bindings.Demandes2View1.hints.Compteactuel.label}"
                                                                    id="resId1c11">
-                                                            <af:outputText value="#{row.Compteactuel}"
-                                                                           shortDesc="#{bindings.Demandes2View1.hints.Compteactuel.tooltip}"
-                                                                           id="ot11"/>
+                                                            <af:inputText value="#{row.bindings.Compteactuel.inputValue}"
+                                                                          label="#{bindings.Demandes2View1.hints.Compteactuel.label}"
+                                                                          required="#{bindings.Demandes2View1.hints.Compteactuel.mandatory}"
+                                                                          columns="#{bindings.Demandes2View1.hints.Compteactuel.displayWidth}"
+                                                                          maximumLength="#{bindings.Demandes2View1.hints.Compteactuel.precision}"
+                                                                          shortDesc="#{bindings.Demandes2View1.hints.Compteactuel.tooltip}"
+                                                                          id="it3">
+                                                                <f:validator binding="#{row.bindings.Compteactuel.validator}"/>
+                                                            </af:inputText>
                                                         </af:column>
                                                         <af:column headerText="#{bindings.Demandes2View1.hints.Typederesidence.label}"
                                                                    id="resId1c12">
-                                                            <af:outputText value="#{row.Typederesidence}"
-                                                                           shortDesc="#{bindings.Demandes2View1.hints.Typederesidence.tooltip}"
-                                                                           id="ot12"/>
+                                                            <af:inputText value="#{row.bindings.Typederesidence.inputValue}"
+                                                                          label="#{bindings.Demandes2View1.hints.Typederesidence.label}"
+                                                                          required="#{bindings.Demandes2View1.hints.Typederesidence.mandatory}"
+                                                                          columns="#{bindings.Demandes2View1.hints.Typederesidence.displayWidth}"
+                                                                          maximumLength="#{bindings.Demandes2View1.hints.Typederesidence.precision}"
+                                                                          shortDesc="#{bindings.Demandes2View1.hints.Typederesidence.tooltip}"
+                                                                          id="it2">
+                                                                <f:validator binding="#{row.bindings.Typederesidence.validator}"/>
+                                                            </af:inputText>
                                                         </af:column>
                                                         <af:column headerText="#{bindings.Demandes2View1.hints.Inscription.label}"
                                                                    id="resId1c13">
-                                                            <af:outputText value="#{row.Inscription}"
-                                                                           shortDesc="#{bindings.Demandes2View1.hints.Inscription.tooltip}"
-                                                                           id="ot13"/>
+                                                            <af:inputText value="#{row.bindings.Inscription.inputValue}"
+                                                                          label="#{bindings.Demandes2View1.hints.Inscription.label}"
+                                                                          required="#{bindings.Demandes2View1.hints.Inscription.mandatory}"
+                                                                          columns="#{bindings.Demandes2View1.hints.Inscription.displayWidth}"
+                                                                          maximumLength="#{bindings.Demandes2View1.hints.Inscription.precision}"
+                                                                          shortDesc="#{bindings.Demandes2View1.hints.Inscription.tooltip}"
+                                                                          id="it7">
+                                                                <f:validator binding="#{row.bindings.Inscription.validator}"/>
+                                                            </af:inputText>
                                                         </af:column>
                                                         <af:column headerText="#{bindings.Demandes2View1.hints.Utilisationducredit.label}"
                                                                    id="resId1c14">
-                                                            <af:outputText value="#{row.Utilisationducredit}"
-                                                                           shortDesc="#{bindings.Demandes2View1.hints.Utilisationducredit.tooltip}"
-                                                                           id="ot14"/>
+                                                            <af:inputText value="#{row.bindings.Utilisationducredit.inputValue}"
+                                                                          label="#{bindings.Demandes2View1.hints.Utilisationducredit.label}"
+                                                                          required="#{bindings.Demandes2View1.hints.Utilisationducredit.mandatory}"
+                                                                          columns="#{bindings.Demandes2View1.hints.Utilisationducredit.displayWidth}"
+                                                                          maximumLength="#{bindings.Demandes2View1.hints.Utilisationducredit.precision}"
+                                                                          shortDesc="#{bindings.Demandes2View1.hints.Utilisationducredit.tooltip}"
+                                                                          id="it8">
+                                                                <f:validator binding="#{row.bindings.Utilisationducredit.validator}"/>
+                                                            </af:inputText>
                                                         </af:column>
                                                         <af:column headerText="#{bindings.Demandes2View1.hints.Nombredemois.label}"
                                                                    id="resId1c15">
-                                                            <af:outputText value="#{row.Nombredemois}"
-                                                                           shortDesc="#{bindings.Demandes2View1.hints.Nombredemois.tooltip}"
-                                                                           id="ot15">
+                                                            <af:inputText value="#{row.bindings.Nombredemois.inputValue}"
+                                                                          label="#{bindings.Demandes2View1.hints.Nombredemois.label}"
+                                                                          required="#{bindings.Demandes2View1.hints.Nombredemois.mandatory}"
+                                                                          columns="#{bindings.Demandes2View1.hints.Nombredemois.displayWidth}"
+                                                                          maximumLength="#{bindings.Demandes2View1.hints.Nombredemois.precision}"
+                                                                          shortDesc="#{bindings.Demandes2View1.hints.Nombredemois.tooltip}"
+                                                                          id="it10">
+                                                                <f:validator binding="#{row.bindings.Nombredemois.validator}"/>
                                                                 <af:convertNumber groupingUsed="false"
                                                                                   pattern="#{bindings.Demandes2View1.hints.Nombredemois.format}"/>
-                                                            </af:outputText>
+                                                            </af:inputText>
                                                         </af:column>
                                                         <af:column headerText="#{bindings.Demandes2View1.hints.Vidvoitures.label}"
                                                                    id="resId1c16">
-                                                            <af:outputText value="#{row.Vidvoitures}"
-                                                                           shortDesc="#{bindings.Demandes2View1.hints.Vidvoitures.tooltip}"
-                                                                           id="ot16">
+                                                            <af:inputText value="#{row.bindings.Vidvoitures.inputValue}"
+                                                                          label="#{bindings.Demandes2View1.hints.Vidvoitures.label}"
+                                                                          required="#{bindings.Demandes2View1.hints.Vidvoitures.mandatory}"
+                                                                          columns="#{bindings.Demandes2View1.hints.Vidvoitures.displayWidth}"
+                                                                          maximumLength="#{bindings.Demandes2View1.hints.Vidvoitures.precision}"
+                                                                          shortDesc="#{bindings.Demandes2View1.hints.Vidvoitures.tooltip}"
+                                                                          id="it13">
+                                                                <f:validator binding="#{row.bindings.Vidvoitures.validator}"/>
                                                                 <af:convertNumber groupingUsed="false"
                                                                                   pattern="#{bindings.Demandes2View1.hints.Vidvoitures.format}"/>
-                                                            </af:outputText>
+                                                            </af:inputText>
                                                         </af:column>
                                                         <af:column headerText="#{bindings.Demandes2View1.hints.Autofinancement.label}"
                                                                    id="resId1c17">
-                                                            <af:outputText value="#{row.Autofinancement}"
-                                                                           shortDesc="#{bindings.Demandes2View1.hints.Autofinancement.tooltip}"
-                                                                           id="ot17">
+                                                            <af:inputText value="#{row.bindings.Autofinancement.inputValue}"
+                                                                          label="#{bindings.Demandes2View1.hints.Autofinancement.label}"
+                                                                          required="#{bindings.Demandes2View1.hints.Autofinancement.mandatory}"
+                                                                          columns="#{bindings.Demandes2View1.hints.Autofinancement.displayWidth}"
+                                                                          maximumLength="#{bindings.Demandes2View1.hints.Autofinancement.precision}"
+                                                                          shortDesc="#{bindings.Demandes2View1.hints.Autofinancement.tooltip}"
+                                                                          id="it6">
+                                                                <f:validator binding="#{row.bindings.Autofinancement.validator}"/>
                                                                 <af:convertNumber groupingUsed="false"
                                                                                   pattern="#{bindings.Demandes2View1.hints.Autofinancement.format}"/>
-                                                            </af:outputText>
+                                                            </af:inputText>
                                                         </af:column>
                                                         <af:column headerText="#{bindings.Demandes2View1.hints.Typeimmobilier.label}"
                                                                    id="resId1c18">
-                                                            <af:outputText value="#{row.Typeimmobilier}"
-                                                                           shortDesc="#{bindings.Demandes2View1.hints.Typeimmobilier.tooltip}"
-                                                                           id="ot18"/>
+                                                            <af:inputText value="#{row.bindings.Typeimmobilier.inputValue}"
+                                                                          label="#{bindings.Demandes2View1.hints.Typeimmobilier.label}"
+                                                                          required="#{bindings.Demandes2View1.hints.Typeimmobilier.mandatory}"
+                                                                          columns="#{bindings.Demandes2View1.hints.Typeimmobilier.displayWidth}"
+                                                                          maximumLength="#{bindings.Demandes2View1.hints.Typeimmobilier.precision}"
+                                                                          shortDesc="#{bindings.Demandes2View1.hints.Typeimmobilier.tooltip}"
+                                                                          id="it4">
+                                                                <f:validator binding="#{row.bindings.Typeimmobilier.validator}"/>
+                                                            </af:inputText>
                                                         </af:column>
                                                         <af:column headerText="#{bindings.Demandes2View1.hints.Typeproject.label}"
                                                                    id="resId1c19">
-                                                            <af:outputText value="#{row.Typeproject}"
-                                                                           shortDesc="#{bindings.Demandes2View1.hints.Typeproject.tooltip}"
-                                                                           id="ot19"/>
+                                                            <af:inputText value="#{row.bindings.Typeproject.inputValue}"
+                                                                          label="#{bindings.Demandes2View1.hints.Typeproject.label}"
+                                                                          required="#{bindings.Demandes2View1.hints.Typeproject.mandatory}"
+                                                                          columns="#{bindings.Demandes2View1.hints.Typeproject.displayWidth}"
+                                                                          maximumLength="#{bindings.Demandes2View1.hints.Typeproject.precision}"
+                                                                          shortDesc="#{bindings.Demandes2View1.hints.Typeproject.tooltip}"
+                                                                          id="it12">
+                                                                <f:validator binding="#{row.bindings.Typeproject.validator}"/>
+                                                            </af:inputText>
                                                         </af:column>
                                                     </af:table>
+                                                    <af:panelFormLayout id="pfl1" rows="5" maxColumns="3">
+                                                        <af:inputText value="#{bindings.Iddemandes2.inputValue}"
+                                                                      label="#{bindings.Iddemandes2.hints.label}"
+                                                                      required="#{bindings.Iddemandes2.hints.mandatory}"
+                                                                      columns="#{bindings.Iddemandes2.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Iddemandes2.hints.precision}"
+                                                                      shortDesc="#{bindings.Iddemandes2.hints.tooltip}"
+                                                                      id="it14">
+                                                            <f:validator binding="#{bindings.Iddemandes2.validator}"/>
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.Iddemandes2.format}"/>
+                                                        </af:inputText>
+                                                        <af:inputText value="#{bindings.Nom.inputValue}"
+                                                                      label="#{bindings.Nom.hints.label}"
+                                                                      required="#{bindings.Nom.hints.mandatory}"
+                                                                      columns="#{bindings.Nom.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Nom.hints.precision}"
+                                                                      shortDesc="#{bindings.Nom.hints.tooltip}"
+                                                                      id="it15">
+                                                            <f:validator binding="#{bindings.Nom.validator}"/>
+                                                        </af:inputText>
+                                                        <af:inputText value="#{bindings.Prenom.inputValue}"
+                                                                      label="#{bindings.Prenom.hints.label}"
+                                                                      required="#{bindings.Prenom.hints.mandatory}"
+                                                                      columns="#{bindings.Prenom.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Prenom.hints.precision}"
+                                                                      shortDesc="#{bindings.Prenom.hints.tooltip}"
+                                                                      id="it16">
+                                                            <f:validator binding="#{bindings.Prenom.validator}"/>
+                                                        </af:inputText>
+                                                        <af:inputText value="#{bindings.Sexe.inputValue}"
+                                                                      label="#{bindings.Sexe.hints.label}"
+                                                                      required="#{bindings.Sexe.hints.mandatory}"
+                                                                      columns="#{bindings.Sexe.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Sexe.hints.precision}"
+                                                                      shortDesc="#{bindings.Sexe.hints.tooltip}"
+                                                                      id="it17">
+                                                            <f:validator binding="#{bindings.Sexe.validator}"/>
+                                                        </af:inputText>
+                                                        <af:inputText value="#{bindings.Cite.inputValue}"
+                                                                      label="#{bindings.Cite.hints.label}"
+                                                                      required="#{bindings.Cite.hints.mandatory}"
+                                                                      columns="#{bindings.Cite.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Cite.hints.precision}"
+                                                                      shortDesc="#{bindings.Cite.hints.tooltip}"
+                                                                      id="it18">
+                                                            <f:validator binding="#{bindings.Cite.validator}"/>
+                                                        </af:inputText>
+                                                        <af:inputText value="#{bindings.Gouv.inputValue}"
+                                                                      label="#{bindings.Gouv.hints.label}"
+                                                                      required="#{bindings.Gouv.hints.mandatory}"
+                                                                      columns="#{bindings.Gouv.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Gouv.hints.precision}"
+                                                                      shortDesc="#{bindings.Gouv.hints.tooltip}"
+                                                                      id="it19">
+                                                            <f:validator binding="#{bindings.Gouv.validator}"/>
+                                                        </af:inputText>
+                                                        <af:inputText value="#{bindings.Salairemensuel.inputValue}"
+                                                                      label="#{bindings.Salairemensuel.hints.label}"
+                                                                      required="#{bindings.Salairemensuel.hints.mandatory}"
+                                                                      columns="#{bindings.Salairemensuel.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Salairemensuel.hints.precision}"
+                                                                      shortDesc="#{bindings.Salairemensuel.hints.tooltip}"
+                                                                      id="it20">
+                                                            <f:validator binding="#{bindings.Salairemensuel.validator}"/>
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.Salairemensuel.format}"/>
+                                                        </af:inputText>
+                                                        <af:inputText value="#{bindings.Montantducredit.inputValue}"
+                                                                      label="#{bindings.Montantducredit.hints.label}"
+                                                                      required="#{bindings.Montantducredit.hints.mandatory}"
+                                                                      columns="#{bindings.Montantducredit.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Montantducredit.hints.precision}"
+                                                                      shortDesc="#{bindings.Montantducredit.hints.tooltip}"
+                                                                      id="it21">
+                                                            <f:validator binding="#{bindings.Montantducredit.validator}"/>
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.Montantducredit.format}"/>
+                                                        </af:inputText>
+                                                        <af:inputText value="#{bindings.Typetravail.inputValue}"
+                                                                      label="#{bindings.Typetravail.hints.label}"
+                                                                      required="#{bindings.Typetravail.hints.mandatory}"
+                                                                      columns="#{bindings.Typetravail.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Typetravail.hints.precision}"
+                                                                      shortDesc="#{bindings.Typetravail.hints.tooltip}"
+                                                                      id="it22">
+                                                            <f:validator binding="#{bindings.Typetravail.validator}"/>
+                                                        </af:inputText>
+                                                        <af:inputText value="#{bindings.Anneeexperience.inputValue}"
+                                                                      label="#{bindings.Anneeexperience.hints.label}"
+                                                                      required="#{bindings.Anneeexperience.hints.mandatory}"
+                                                                      columns="#{bindings.Anneeexperience.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Anneeexperience.hints.precision}"
+                                                                      shortDesc="#{bindings.Anneeexperience.hints.tooltip}"
+                                                                      id="it23">
+                                                            <f:validator binding="#{bindings.Anneeexperience.validator}"/>
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.Anneeexperience.format}"/>
+                                                        </af:inputText>
+                                                        <af:inputText value="#{bindings.Compteactuel.inputValue}"
+                                                                      label="#{bindings.Compteactuel.hints.label}"
+                                                                      required="#{bindings.Compteactuel.hints.mandatory}"
+                                                                      columns="#{bindings.Compteactuel.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Compteactuel.hints.precision}"
+                                                                      shortDesc="#{bindings.Compteactuel.hints.tooltip}"
+                                                                      id="it24">
+                                                            <f:validator binding="#{bindings.Compteactuel.validator}"/>
+                                                        </af:inputText>
+                                                        <af:inputText value="#{bindings.Typederesidence.inputValue}"
+                                                                      label="#{bindings.Typederesidence.hints.label}"
+                                                                      required="#{bindings.Typederesidence.hints.mandatory}"
+                                                                      columns="#{bindings.Typederesidence.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Typederesidence.hints.precision}"
+                                                                      shortDesc="#{bindings.Typederesidence.hints.tooltip}"
+                                                                      id="it25" autoSubmit="true">
+                                                            <f:validator binding="#{bindings.Typederesidence.validator}"/>
+                                                        </af:inputText>
+                                                        <af:inputText value="#{bindings.Inscription.inputValue}"
+                                                                      label="#{bindings.Inscription.hints.label}"
+                                                                      required="#{bindings.Inscription.hints.mandatory}"
+                                                                      columns="#{bindings.Inscription.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Inscription.hints.precision}"
+                                                                      shortDesc="#{bindings.Inscription.hints.tooltip}"
+                                                                      id="it26">
+                                                            <f:validator binding="#{bindings.Inscription.validator}"/>
+                                                        </af:inputText>
+                                                        <af:inputText value="#{bindings.Utilisationducredit.inputValue}"
+                                                                      label="#{bindings.Utilisationducredit.hints.label}"
+                                                                      required="#{bindings.Utilisationducredit.hints.mandatory}"
+                                                                      columns="#{bindings.Utilisationducredit.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Utilisationducredit.hints.precision}"
+                                                                      shortDesc="#{bindings.Utilisationducredit.hints.tooltip}"
+                                                                      id="it27">
+                                                            <f:validator binding="#{bindings.Utilisationducredit.validator}"/>
+                                                        </af:inputText>
+                                                        <af:inputText value="#{bindings.Nombredemois.inputValue}"
+                                                                      label="#{bindings.Nombredemois.hints.label}"
+                                                                      required="#{bindings.Nombredemois.hints.mandatory}"
+                                                                      columns="#{bindings.Nombredemois.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Nombredemois.hints.precision}"
+                                                                      shortDesc="#{bindings.Nombredemois.hints.tooltip}"
+                                                                      id="it28">
+                                                            <f:validator binding="#{bindings.Nombredemois.validator}"/>
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.Nombredemois.format}"/>
+                                                        </af:inputText>
+                                                        <af:inputText value="#{bindings.Vidvoitures.inputValue}"
+                                                                      label="#{bindings.Vidvoitures.hints.label}"
+                                                                      required="#{bindings.Vidvoitures.hints.mandatory}"
+                                                                      columns="#{bindings.Vidvoitures.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Vidvoitures.hints.precision}"
+                                                                      shortDesc="#{bindings.Vidvoitures.hints.tooltip}"
+                                                                      id="it29">
+                                                            <f:validator binding="#{bindings.Vidvoitures.validator}"/>
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.Vidvoitures.format}"/>
+                                                        </af:inputText>
+                                                        <af:inputText value="#{bindings.Autofinancement.inputValue}"
+                                                                      label="#{bindings.Autofinancement.hints.label}"
+                                                                      required="#{bindings.Autofinancement.hints.mandatory}"
+                                                                      columns="#{bindings.Autofinancement.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Autofinancement.hints.precision}"
+                                                                      shortDesc="#{bindings.Autofinancement.hints.tooltip}"
+                                                                      id="it30">
+                                                            <f:validator binding="#{bindings.Autofinancement.validator}"/>
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.Autofinancement.format}"/>
+                                                        </af:inputText>
+                                                        <af:inputText value="#{bindings.Typeimmobilier.inputValue}"
+                                                                      label="#{bindings.Typeimmobilier.hints.label}"
+                                                                      required="#{bindings.Typeimmobilier.hints.mandatory}"
+                                                                      columns="#{bindings.Typeimmobilier.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Typeimmobilier.hints.precision}"
+                                                                      shortDesc="#{bindings.Typeimmobilier.hints.tooltip}"
+                                                                      id="it31">
+                                                            <f:validator binding="#{bindings.Typeimmobilier.validator}"/>
+                                                        </af:inputText>
+                                                        <af:inputText value="#{bindings.Typeproject.inputValue}"
+                                                                      label="#{bindings.Typeproject.hints.label}"
+                                                                      required="#{bindings.Typeproject.hints.mandatory}"
+                                                                      columns="#{bindings.Typeproject.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.Typeproject.hints.precision}"
+                                                                      shortDesc="#{bindings.Typeproject.hints.tooltip}"
+                                                                      id="it32">
+                                                            <f:validator binding="#{bindings.Typeproject.validator}"/>
+                                                        </af:inputText>
+                                                        <f:facet name="footer">
+                                                            <af:panelGroupLayout layout="horizontal" id="pgl5">
+                                                                <af:button actionListener="#{bindings.First.execute}"
+                                                                           text="First"
+                                                                           disabled="#{!bindings.First.enabled}"
+                                                                           partialSubmit="true" id="b4"/>
+                                                                <af:button actionListener="#{bindings.Previous.execute}"
+                                                                           text="Previous"
+                                                                           disabled="#{!bindings.Previous.enabled}"
+                                                                           partialSubmit="true" id="b5"/>
+                                                                <af:button actionListener="#{bindings.Next.execute}"
+                                                                           text="Next"
+                                                                           disabled="#{!bindings.Next.enabled}"
+                                                                           partialSubmit="true" id="b6"/>
+                                                                <af:button actionListener="#{bindings.Last.execute}"
+                                                                           text="Last"
+                                                                           disabled="#{!bindings.Last.enabled}"
+                                                                           partialSubmit="true" id="b7"/>
+                                                            </af:panelGroupLayout>
+                                                        </f:facet>
+                                                    </af:panelFormLayout>
                                                 </af:panelGroupLayout>
                                             </f:facet>
                                             <f:facet name="second">
