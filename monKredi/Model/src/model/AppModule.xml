@@ -139,6 +139,12 @@
   <ViewUsage
     Name="UtilisateursView19"
     ViewObjectName="model.UtilisateursView"/>
+  <ViewUsage
+    Name="DelegationsView1"
+    ViewObjectName="model.DelegationsView"/>
+  <ViewUsage
+    Name="GouvernoratsView1"
+    ViewObjectName="model.GouvernoratsView"/>
   <ViewLinkUsage
     Name="FkDemandesUtilisateurs1Link1"
     ViewLinkObjectName="model.FkDemandesUtilisateurs1Link"
