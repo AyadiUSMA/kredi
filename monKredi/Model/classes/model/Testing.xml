@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Testing"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="testing"
+  AliasName="Testing"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Idtesting"
+    IsNotNull="true"
+    ColumnName="idtesting"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="testing"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Demandes"
+    Association="model.FkDemandesUtilisateurs1Assoc7"
+    AssociationEnd="model.FkDemandesUtilisateurs1Assoc7.Demandes"
+    AssociationOtherEnd="model.FkDemandesUtilisateurs1Assoc7.Testing"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Demandes1"
+    Association="model.FkDemandesTypesDemande1Assoc7"
+    AssociationEnd="model.FkDemandesTypesDemande1Assoc7.Demandes1"
+    AssociationOtherEnd="model.FkDemandesTypesDemande1Assoc7.Testing1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Utilisateurs"
+    Association="model.FkUtilisateursTypeFournisseur1Assoc8"
+    AssociationEnd="model.FkUtilisateursTypeFournisseur1Assoc8.Utilisateurs"
+    AssociationOtherEnd="model.FkUtilisateursTypeFournisseur1Assoc8.Testing"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Utilisateurs1"
+    Association="model.FkUtilisateursFournisseursAssoc8"
+    AssociationEnd="model.FkUtilisateursFournisseursAssoc8.Utilisateurs1"
+    AssociationOtherEnd="model.FkUtilisateursFournisseursAssoc8.Testing1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Testing.Idtesting"/>
+    </AttrArray>
+  </Key>
+</Entity>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkDemandesTypesDemande1Link"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  EntityAssociation="model.FkDemandesTypesDemande1Assoc">
+  <ViewLinkDefEnd
+    Name="Demandes2View"
+    Cardinality="1"
+    Source="true"
+    Owner="model.Demandes2View">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="Demandes2View"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Demandes2View.Iddemandes2"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="DemandesView1"
+    Cardinality="-1"
+    Owner="model.DemandesView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="DemandesView1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.DemandesView.TypesDemandeIdtypesDemande"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkUtilisateursFournisseursAssoc3Link"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  EntityAssociation="model.FkUtilisateursFournisseursAssoc3">
+  <ViewLinkDefEnd
+    Name="TypeFournisseurView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.TypeFournisseurView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="TypeFournisseurView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.TypeFournisseurView.IdtypeFournisseur"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="UtilisateursView"
+    Cardinality="-1"
+    Owner="model.UtilisateursView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="UtilisateursView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.UtilisateursView.FournisseursIdfournisseurs"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>
