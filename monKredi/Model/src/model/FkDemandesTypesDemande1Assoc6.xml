@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkDemandesTypesDemande1Assoc6"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Voitures1"
+    Cardinality="1"
+    Source="true"
+    Owner="model.Voitures">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Voitures1"/>
+      <Attr Name="_foreignKey" Value="model.Voitures.Primary1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Voitures.Idvoitures"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Demandes1"
+    Cardinality="-1"
+    Owner="model.Demandes">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Demandes1"/>
+      <Attr Name="_foreignKey" Value="model.Demandes.FkDemandesTypesDemande1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Demandes.TypesDemandeIdtypesDemande"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="indexPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Demandes2View1" RangeSize="25" DataControl="AppModuleDataControl" id="Demandes2View1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="Demandes2View1Iterator" id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Demandes2View1Iterator" id="Demandes2View1">
+      <nodeDefinition DefName="model.Demandes2View" Name="Demandes2View10">
+        <AttrNames>
+          <Item Value="Iddemandes2"/>
+          <Item Value="Nom"/>
+          <Item Value="Prenom"/>
+          <Item Value="Sexe"/>
+          <Item Value="Cite"/>
+          <Item Value="Gouv"/>
+          <Item Value="Salairemensuel"/>
+          <Item Value="Montantducredit"/>
+          <Item Value="Typetravail"/>
+          <Item Value="Anneeexperience"/>
+          <Item Value="Compteactuel"/>
+          <Item Value="Typederesidence"/>
+          <Item Value="Inscription"/>
+          <Item Value="Utilisationducredit"/>
+          <Item Value="Nombredemois"/>
+          <Item Value="Vidvoitures"/>
+          <Item Value="Autofinancement"/>
+          <Item Value="Typeimmobilier"/>
+          <Item Value="Typeproject"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="Demandes2View1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

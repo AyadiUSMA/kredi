@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="index.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelSplitter orientation="vertical" splitterPosition="50" positionedFromEnd="true" id="ps2">
+                <f:facet name="first">
+                    <af:panelGridLayout id="pgl1">
+                        <af:gridRow height="50px" id="gr1">
+                            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                                <!-- Header -->
+                                <af:panelGroupLayout id="pgl4" layout="horizontal" halign="center"
+                                                     inlineStyle="font-size:xx-large;">
+                                    <af:activeOutputText value="KERDI" id="aot1"/>
+                                </af:panelGroupLayout>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow height="100%" id="gr2">
+                            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                                <af:panelSplitter orientation="horizontal" splitterPosition="100" id="ps3">
+                                    <f:facet name="first">
+                                        <!-- Left -->
+                                    </f:facet>
+                                    <f:facet name="second">
+                                        <af:panelSplitter orientation="horizontal" splitterPosition="100"
+                                                          positionedFromEnd="true" id="ps1">
+                                            <f:facet name="first">
+                                                <!-- Content -->
+                                                <af:panelGroupLayout id="pgl2" layout="scroll">
+                                                    <af:panelHeader text="Demandes2" id="ph1">
+                                                        <af:query id="qryId1" headerText="Search" disclosed="true"
+                                                                  value="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
+                                                                  model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                                                  queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                                                  queryOperationListener="#{bindings.ImplicitViewCriteriaQuery.processQueryOperation}"
+                                                                  resultComponentId="::resId1" rows="3" maxColumns="5"/>
+                                                    </af:panelHeader>
+                                                    <af:panelGroupLayout id="pgl3" layout="horizontal">
+                                                        <af:button text="CreateInsert"
+                                                                   disabled="#{!bindings.CreateInsert.enabled}" id="b1"
+                                                                   actionListener="#{bindings.CreateInsert.execute}"/>
+                                                        <af:button actionListener="#{bindings.Commit.execute}"
+                                                                   text="Commit" disabled="#{!bindings.Commit.enabled}"
+                                                                   id="b2"/>
+                                                        <af:button actionListener="#{bindings.Rollback.execute}"
+                                                                   text="Rollback"
+                                                                   disabled="#{!bindings.Rollback.enabled}"
+                                                                   immediate="true" id="b3">
+                                                            <af:resetActionListener/>
+                                                        </af:button>
+                                                    </af:panelGroupLayout>
+                                                    <af:table value="#{bindings.Demandes2View1.collectionModel}"
+                                                              var="row" rows="#{bindings.Demandes2View1.rangeSize}"
+                                                              emptyText="#{bindings.Demandes2View1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                              rowBandingInterval="0"
+                                                              selectedRowKeys="#{bindings.Demandes2View1.collectionModel.selectedRow}"
+                                                              selectionListener="#{bindings.Demandes2View1.collectionModel.makeCurrent}"
+                                                              rowSelection="single"
+                                                              fetchSize="#{bindings.Demandes2View1.rangeSize}"
+                                                              id="resId1" partialTriggers="::b1 ::b2 ::b3">
+                                                        <af:column headerText="#{bindings.Demandes2View1.hints.Nom.label}"
+                                                                   id="resId1c2">
+                                                            <af:outputText value="#{row.Nom}"
+                                                                           shortDesc="#{bindings.Demandes2View1.hints.Nom.tooltip}"
+                                                                           id="ot2"/>
+                                                        </af:column>
+                                                        <af:column headerText="#{bindings.Demandes2View1.hints.Prenom.label}"
+                                                                   id="resId1c3">
+                                                            <af:outputText value="#{row.Prenom}"
+                                                                           shortDesc="#{bindings.Demandes2View1.hints.Prenom.tooltip}"
+                                                                           id="ot3"/>
+                                                        </af:column>
+                                                        <af:column headerText="#{bindings.Demandes2View1.hints.Salairemensuel.label}"
+                                                                   id="resId1c7">
+                                                            <af:outputText value="#{row.Salairemensuel}"
+                                                                           shortDesc="#{bindings.Demandes2View1.hints.Salairemensuel.tooltip}"
+                                                                           id="ot7">
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.Demandes2View1.hints.Salairemensuel.format}"/>
+                                                            </af:outputText>
+                                                        </af:column>
+                                                        <af:column headerText="#{bindings.Demandes2View1.hints.Montantducredit.label}"
+                                                                   id="resId1c8">
+                                                            <af:outputText value="#{row.Montantducredit}"
+                                                                           shortDesc="#{bindings.Demandes2View1.hints.Montantducredit.tooltip}"
+                                                                           id="ot8">
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.Demandes2View1.hints.Montantducredit.format}"/>
+                                                            </af:outputText>
+                                                        </af:column>
+                                                        <af:column headerText="#{bindings.Demandes2View1.hints.Typetravail.label}"
+                                                                   id="resId1c9">
+                                                            <af:outputText value="#{row.Typetravail}"
+                                                                           shortDesc="#{bindings.Demandes2View1.hints.Typetravail.tooltip}"
+                                                                           id="ot9"/>
+                                                        </af:column>
+                                                        <af:column headerText="#{bindings.Demandes2View1.hints.Anneeexperience.label}"
+                                                                   id="resId1c10">
+                                                            <af:outputText value="#{row.Anneeexperience}"
+                                                                           shortDesc="#{bindings.Demandes2View1.hints.Anneeexperience.tooltip}"
+                                                                           id="ot10">
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.Demandes2View1.hints.Anneeexperience.format}"/>
+                                                            </af:outputText>
+                                                        </af:column>
+                                                        <af:column headerText="#{bindings.Demandes2View1.hints.Compteactuel.label}"
+                                                                   id="resId1c11">
+                                                            <af:outputText value="#{row.Compteactuel}"
+                                                                           shortDesc="#{bindings.Demandes2View1.hints.Compteactuel.tooltip}"
+                                                                           id="ot11"/>
+                                                        </af:column>
+                                                        <af:column headerText="#{bindings.Demandes2View1.hints.Typederesidence.label}"
+                                                                   id="resId1c12">
+                                                            <af:outputText value="#{row.Typederesidence}"
+                                                                           shortDesc="#{bindings.Demandes2View1.hints.Typederesidence.tooltip}"
+                                                                           id="ot12"/>
+                                                        </af:column>
+                                                        <af:column headerText="#{bindings.Demandes2View1.hints.Inscription.label}"
+                                                                   id="resId1c13">
+                                                            <af:outputText value="#{row.Inscription}"
+                                                                           shortDesc="#{bindings.Demandes2View1.hints.Inscription.tooltip}"
+                                                                           id="ot13"/>
+                                                        </af:column>
+                                                        <af:column headerText="#{bindings.Demandes2View1.hints.Utilisationducredit.label}"
+                                                                   id="resId1c14">
+                                                            <af:outputText value="#{row.Utilisationducredit}"
+                                                                           shortDesc="#{bindings.Demandes2View1.hints.Utilisationducredit.tooltip}"
+                                                                           id="ot14"/>
+                                                        </af:column>
+                                                        <af:column headerText="#{bindings.Demandes2View1.hints.Nombredemois.label}"
+                                                                   id="resId1c15">
+                                                            <af:outputText value="#{row.Nombredemois}"
+                                                                           shortDesc="#{bindings.Demandes2View1.hints.Nombredemois.tooltip}"
+                                                                           id="ot15">
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.Demandes2View1.hints.Nombredemois.format}"/>
+                                                            </af:outputText>
+                                                        </af:column>
+                                                        <af:column headerText="#{bindings.Demandes2View1.hints.Vidvoitures.label}"
+                                                                   id="resId1c16">
+                                                            <af:outputText value="#{row.Vidvoitures}"
+                                                                           shortDesc="#{bindings.Demandes2View1.hints.Vidvoitures.tooltip}"
+                                                                           id="ot16">
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.Demandes2View1.hints.Vidvoitures.format}"/>
+                                                            </af:outputText>
+                                                        </af:column>
+                                                        <af:column headerText="#{bindings.Demandes2View1.hints.Autofinancement.label}"
+                                                                   id="resId1c17">
+                                                            <af:outputText value="#{row.Autofinancement}"
+                                                                           shortDesc="#{bindings.Demandes2View1.hints.Autofinancement.tooltip}"
+                                                                           id="ot17">
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.Demandes2View1.hints.Autofinancement.format}"/>
+                                                            </af:outputText>
+                                                        </af:column>
+                                                        <af:column headerText="#{bindings.Demandes2View1.hints.Typeimmobilier.label}"
+                                                                   id="resId1c18">
+                                                            <af:outputText value="#{row.Typeimmobilier}"
+                                                                           shortDesc="#{bindings.Demandes2View1.hints.Typeimmobilier.tooltip}"
+                                                                           id="ot18"/>
+                                                        </af:column>
+                                                        <af:column headerText="#{bindings.Demandes2View1.hints.Typeproject.label}"
+                                                                   id="resId1c19">
+                                                            <af:outputText value="#{row.Typeproject}"
+                                                                           shortDesc="#{bindings.Demandes2View1.hints.Typeproject.tooltip}"
+                                                                           id="ot19"/>
+                                                        </af:column>
+                                                    </af:table>
+                                                </af:panelGroupLayout>
+                                            </f:facet>
+                                            <f:facet name="second">
+                                                <!-- Right -->
+                                            </f:facet>
+                                        </af:panelSplitter>
+                                    </f:facet>
+                                </af:panelSplitter>
+                            </af:gridCell>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </f:facet>
+                <f:facet name="second">
+                    <!-- Footer -->
+                </f:facet>
+            </af:panelSplitter>
+        </af:form>
+    </af:document>
+</f:view>

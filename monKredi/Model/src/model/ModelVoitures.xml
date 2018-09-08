@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ModelVoitures"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="Model_Voitures"
+  AliasName="ModelVoitures"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="IdmodelVoitures"
+    IsNotNull="true"
+    ColumnName="idModel_Voitures"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="Model_Voitures"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModelVoiturescol"
+    Precision="45"
+    ColumnName="Model_Voiturescol"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="Model_Voitures">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Demandes"
+    Association="model.FkDemandesUtilisateurs1Assoc3"
+    AssociationEnd="model.FkDemandesUtilisateurs1Assoc3.Demandes"
+    AssociationOtherEnd="model.FkDemandesUtilisateurs1Assoc3.ModelVoitures"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Demandes1"
+    Association="model.FkDemandesTypesDemande1Assoc3"
+    AssociationEnd="model.FkDemandesTypesDemande1Assoc3.Demandes1"
+    AssociationOtherEnd="model.FkDemandesTypesDemande1Assoc3.ModelVoitures1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Utilisateurs"
+    Association="model.FkUtilisateursFournisseursAssoc"
+    AssociationEnd="model.FkUtilisateursFournisseursAssoc.Utilisateurs"
+    AssociationOtherEnd="model.FkUtilisateursFournisseursAssoc.ModelVoitures"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Utilisateurs1"
+    Association="model.FkUtilisateursTypeFournisseur1Assoc"
+    AssociationEnd="model.FkUtilisateursTypeFournisseur1Assoc.Utilisateurs1"
+    AssociationOtherEnd="model.FkUtilisateursTypeFournisseur1Assoc.ModelVoitures1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ModelVoitures.IdmodelVoitures"/>
+    </AttrArray>
+  </Key>
+</Entity>

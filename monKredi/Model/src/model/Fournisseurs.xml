@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Fournisseurs"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="Fournisseurs"
+  AliasName="Fournisseurs"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Idfournisseurs"
+    IsNotNull="true"
+    ColumnName="idFournisseurs"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="Fournisseurs"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Nom"
+    Precision="45"
+    ColumnName="nom"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="Fournisseurs">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Adresse"
+    Precision="45"
+    ColumnName="adresse"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="Fournisseurs">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Contact"
+    Precision="45"
+    ColumnName="contact"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="Fournisseurs">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Email"
+    Precision="45"
+    ColumnName="email"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="Fournisseurs">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Phone"
+    Precision="45"
+    ColumnName="phone"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="Fournisseurs">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Demandes"
+    Association="model.FkDemandesUtilisateurs1Assoc1"
+    AssociationEnd="model.FkDemandesUtilisateurs1Assoc1.Demandes"
+    AssociationOtherEnd="model.FkDemandesUtilisateurs1Assoc1.Fournisseurs"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Demandes1"
+    Association="model.FkDemandesTypesDemande1Assoc1"
+    AssociationEnd="model.FkDemandesTypesDemande1Assoc1.Demandes1"
+    AssociationOtherEnd="model.FkDemandesTypesDemande1Assoc1.Fournisseurs1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Utilisateurs"
+    Association="model.FkUtilisateursFournisseursAssoc4"
+    AssociationEnd="model.FkUtilisateursFournisseursAssoc4.Utilisateurs"
+    AssociationOtherEnd="model.FkUtilisateursFournisseursAssoc4.Fournisseurs"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Utilisateurs1"
+    Association="model.FkUtilisateursTypeFournisseur1Assoc4"
+    AssociationEnd="model.FkUtilisateursTypeFournisseur1Assoc4.Utilisateurs1"
+    AssociationOtherEnd="model.FkUtilisateursTypeFournisseur1Assoc4.Fournisseurs1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Fournisseurs.Idfournisseurs"/>
+    </AttrArray>
+  </Key>
+</Entity>
