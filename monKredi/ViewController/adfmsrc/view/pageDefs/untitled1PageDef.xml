@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="untitled1PageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="UtilisateursView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="UtilisateursView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="UtilisateursView1Iterator" id="Idutilisateurs">
+      <AttrNames>
+        <Item Value="Idutilisateurs"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UtilisateursView1Iterator" id="Nom">
+      <AttrNames>
+        <Item Value="Nom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UtilisateursView1Iterator" id="Prenom">
+      <AttrNames>
+        <Item Value="Prenom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UtilisateursView1Iterator" id="Password">
+      <AttrNames>
+        <Item Value="Password"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UtilisateursView1Iterator" id="FournisseursIdfournisseurs">
+      <AttrNames>
+        <Item Value="FournisseursIdfournisseurs"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UtilisateursView1Iterator" id="TypeFournisseurIdtypeFournisseur">
+      <AttrNames>
+        <Item Value="TypeFournisseurIdtypeFournisseur"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="UtilisateursView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="UtilisateursView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="UtilisateursView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="UtilisateursView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="UtilisateursView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

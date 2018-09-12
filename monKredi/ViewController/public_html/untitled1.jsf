@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="untitled1.jsf" id="d1">
+        <af:messages id="m1"/>
         <af:form id="f1">
             <af:panelSplitter orientation="vertical" splitterPosition="50" positionedFromEnd="true" id="ps3">
                 <f:facet name="first">
@@ -22,6 +23,88 @@
                                                           positionedFromEnd="true" id="ps2">
                                             <f:facet name="first">
                                                 <!-- Content -->
+                                                <af:panelFormLayout id="pfl1">
+                                                    <af:inputText value="#{bindings.Idutilisateurs.inputValue}"
+                                                                  label="#{bindings.Idutilisateurs.hints.label}"
+                                                                  required="#{bindings.Idutilisateurs.hints.mandatory}"
+                                                                  columns="#{bindings.Idutilisateurs.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Idutilisateurs.hints.precision}"
+                                                                  shortDesc="#{bindings.Idutilisateurs.hints.tooltip}"
+                                                                  id="it1">
+                                                        <f:validator binding="#{bindings.Idutilisateurs.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.Idutilisateurs.format}"/>
+                                                    </af:inputText>
+                                                    <af:inputText value="#{bindings.Nom.inputValue}"
+                                                                  label="#{bindings.Nom.hints.label}"
+                                                                  required="#{bindings.Nom.hints.mandatory}"
+                                                                  columns="#{bindings.Nom.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Nom.hints.precision}"
+                                                                  shortDesc="#{bindings.Nom.hints.tooltip}" id="it2">
+                                                        <f:validator binding="#{bindings.Nom.validator}"/>
+                                                    </af:inputText>
+                                                    <af:inputText value="#{bindings.Prenom.inputValue}"
+                                                                  label="#{bindings.Prenom.hints.label}"
+                                                                  required="#{bindings.Prenom.hints.mandatory}"
+                                                                  columns="#{bindings.Prenom.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Prenom.hints.precision}"
+                                                                  shortDesc="#{bindings.Prenom.hints.tooltip}" id="it3">
+                                                        <f:validator binding="#{bindings.Prenom.validator}"/>
+                                                    </af:inputText>
+                                                    <af:inputText value="#{bindings.Password.inputValue}"
+                                                                  label="#{bindings.Password.hints.label}"
+                                                                  required="#{bindings.Password.hints.mandatory}"
+                                                                  columns="#{bindings.Password.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Password.hints.precision}"
+                                                                  shortDesc="#{bindings.Password.hints.tooltip}"
+                                                                  id="it4">
+                                                        <f:validator binding="#{bindings.Password.validator}"/>
+                                                    </af:inputText>
+                                                    <af:inputText value="#{bindings.FournisseursIdfournisseurs.inputValue}"
+                                                                  label="#{bindings.FournisseursIdfournisseurs.hints.label}"
+                                                                  required="#{bindings.FournisseursIdfournisseurs.hints.mandatory}"
+                                                                  columns="#{bindings.FournisseursIdfournisseurs.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.FournisseursIdfournisseurs.hints.precision}"
+                                                                  shortDesc="#{bindings.FournisseursIdfournisseurs.hints.tooltip}"
+                                                                  id="it5" autoSubmit="true">
+                                                        <f:validator binding="#{bindings.FournisseursIdfournisseurs.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.FournisseursIdfournisseurs.format}"/>
+                                                    </af:inputText>
+                                                    <af:inputText value="#{bindings.TypeFournisseurIdtypeFournisseur.inputValue}"
+                                                                  label="#{bindings.TypeFournisseurIdtypeFournisseur.hints.label}"
+                                                                  required="#{bindings.TypeFournisseurIdtypeFournisseur.hints.mandatory}"
+                                                                  columns="#{bindings.TypeFournisseurIdtypeFournisseur.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.TypeFournisseurIdtypeFournisseur.hints.precision}"
+                                                                  shortDesc="#{bindings.TypeFournisseurIdtypeFournisseur.hints.tooltip}"
+                                                                  id="it6">
+                                                        <f:validator binding="#{bindings.TypeFournisseurIdtypeFournisseur.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.TypeFournisseurIdtypeFournisseur.format}"/>
+                                                    </af:inputText>
+                                                    <f:facet name="footer">
+                                                        <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                                            <af:button actionListener="#{bindings.First.execute}"
+                                                                       text="First"
+                                                                       disabled="#{!bindings.First.enabled}"
+                                                                       partialSubmit="true" id="b1"/>
+                                                            <af:button actionListener="#{bindings.Previous.execute}"
+                                                                       text="Previous"
+                                                                       disabled="#{!bindings.Previous.enabled}"
+                                                                       partialSubmit="true" id="b2"/>
+                                                            <af:button actionListener="#{bindings.Next.execute}"
+                                                                       text="Next" disabled="#{!bindings.Next.enabled}"
+                                                                       partialSubmit="true" id="b3"/>
+                                                            <af:button actionListener="#{bindings.Last.execute}"
+                                                                       text="Last" disabled="#{!bindings.Last.enabled}"
+                                                                       partialSubmit="true" id="b4"/>
+                                                        </af:panelGroupLayout>
+                                                        <af:button actionListener="#{bindings.CreateInsert.execute}"
+                                                                   text="CreateInsert"
+                                                                   disabled="#{!bindings.CreateInsert.enabled}"
+                                                                   id="b5"/>
+                                                    </f:facet>
+                                                </af:panelFormLayout>
                                             </f:facet>
                                             <f:facet name="second">
                                                 <!-- Right -->
